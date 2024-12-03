@@ -1,0 +1,10 @@
+.content {
+  transition: margin-left 0.3s ease-in-out; /* Smooth transition */
+  margin-left: 130px; /* Initially no margin */
+  margin-right: 30px;
+  margin-top: 20px;
+}
+
+.content.push {
+  margin-left: 334px; /* The width of the sidebar */
+}

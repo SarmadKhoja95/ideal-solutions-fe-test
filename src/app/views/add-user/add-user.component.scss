@@ -1,0 +1,19 @@
+.input-field {
+  min-height: 40px;
+  width: 100%;
+  background: var(--surface-50);
+  border: none;
+  border-radius: 10px;
+  color: var(--text-color);
+  outline: none;
+  padding-left: 16px;
+  font-size: 14px;
+  &::placeholder {
+    color: var(--surface-200);
+  }
+}
+.error {
+  color: var(--red-900);
+  font-size: 12px;
+  margin-top: 8px;
+}

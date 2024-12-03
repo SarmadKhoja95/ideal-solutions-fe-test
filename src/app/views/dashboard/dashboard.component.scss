@@ -1,0 +1,14 @@
+.search-input {
+  min-height: 40px;
+  width: 100%;
+  background: var(--surface-50);
+  border: none;
+  border-radius: 10px;
+  color: var(--text-color);
+  outline: none;
+  padding-left: 55px;
+  font-size: 14px;
+  &::placeholder {
+    color: var(--surface-200);
+  }
+}

@@ -1,0 +1,249 @@
+<div class="grid">
+  <div class="col">
+    <div
+      class="py-2 px-3 surface-card border-round mi flex flex-column align-items-center justify-content-center gap-3 text-center"
+      style="min-height: 170px; height: 100%"
+    >
+      <p-knob
+        [(ngModel)]="value"
+        valueTemplate="{value}%"
+        [size]="80"
+        valueColor="#00C5D6"
+        rangeColor="transparent"
+        textColor="#00C5D6"
+        [strokeWidth]="8"
+        [readonly]="true"
+      />
+
+      <p class="font-bold text-color">300/320</p>
+      <p class="font-medium text-200" style="font-size: 14px">Active Trips</p>
+    </div>
+  </div>
+  <div class="col">
+    <div
+      class="py-2 px-3 surface-card border-round mi flex flex-column align-items-center justify-content-center gap-3 text-center"
+      style="min-height: 170px; height: 100%"
+    >
+      <p-knob
+        [(ngModel)]="value2"
+        valueTemplate="{value}%"
+        [size]="80"
+        valueColor="#00C5D6"
+        rangeColor="transparent"
+        textColor="#00C5D6"
+        [strokeWidth]="8"
+        [readonly]="true"
+      />
+
+      <p class="font-bold text-color">375/500</p>
+      <p class="font-medium text-200" style="font-size: 14px">
+        Active Vehicles
+      </p>
+    </div>
+  </div>
+  <div class="col">
+    <div
+      class="py-2 px-3 surface-card border-round mi flex flex-column align-items-center justify-content-center gap-3 text-center"
+      style="min-height: 170px; height: 100%"
+    >
+      <p-knob
+        [(ngModel)]="value3"
+        valueTemplate="{value}%"
+        [size]="80"
+        valueColor="#00C5D6"
+        rangeColor="transparent"
+        textColor="#00C5D6"
+        [strokeWidth]="8"
+        [readonly]="true"
+      />
+
+      <p class="font-bold text-color">16/20</p>
+      <p class="font-medium text-200" style="font-size: 14px">
+        Under Maintenance
+      </p>
+    </div>
+  </div>
+  <div class="col">
+    <div
+      class="py-2 px-3 surface-card border-round mi flex flex-column align-items-center justify-content-center gap-3 text-center"
+      style="min-height: 170px; height: 100%"
+    >
+      <p class="font-bold text-color">2</p>
+      <p class="font-medium text-200" style="font-size: 14px">
+        In-Active shifts
+      </p>
+    </div>
+  </div>
+  <div class="col">
+    <div
+      class="py-2 px-3 surface-card border-round mi flex flex-column align-items-center justify-content-center gap-3 text-center"
+      style="min-height: 170px; height: 100%"
+    >
+      <p class="font-bold text-color">100</p>
+      <p class="font-medium text-200" style="font-size: 14px">
+        Stopped Vehicles
+      </p>
+    </div>
+  </div>
+  <div class="col">
+    <div
+      class="py-2 px-3 surface-card border-round mi flex flex-column align-items-center justify-content-center gap-3 text-center"
+      style="min-height: 170px; height: 100%"
+    >
+      <p class="font-bold text-color">4</p>
+      <p class="font-medium text-200" style="font-size: 14px">
+        Queue Maintenance
+      </p>
+    </div>
+  </div>
+  <div class="col">
+    <div
+      class="py-2 px-3 surface-card border-round mi flex flex-column align-items-center justify-content-center gap-3 text-center"
+      style="min-height: 170px; height: 100%"
+    >
+      <p class="font-bold text-color">7</p>
+      <p class="font-medium text-200" style="font-size: 14px">
+        Total Departments
+      </p>
+    </div>
+  </div>
+  <div class="col">
+    <div
+      class="py-2 px-3 surface-card border-round mi flex flex-column align-items-center justify-content-center gap-3 text-center"
+      style="min-height: 170px; height: 100%"
+    >
+      <p class="font-bold text-color">60</p>
+      <p class="font-medium text-200" style="font-size: 14px">Total Fleets</p>
+    </div>
+  </div>
+  <div class="col">
+    <div
+      class="py-2 px-3 surface-card border-round mi flex flex-column align-items-center justify-content-center gap-3 text-center"
+      style="min-height: 170px; height: 100%"
+    >
+      <p class="font-bold text-color">300</p>
+      <p class="font-medium text-200" style="font-size: 14px">Total Drivers</p>
+    </div>
+  </div>
+</div>
+<!-- Search -->
+<div class="flex align-items-center my-3">
+  <p-iconField iconPosition="left" styleClass="flex-1">
+    <p-inputIcon styleClass="pi pi-search text-color" style="font-size: 20px" />
+    <input type="text" pInputText placeholder="Search" class="search-input" />
+  </p-iconField>
+  <p-button
+    label="Export"
+    [text]="true"
+    [raised]="true"
+    severity="secondary"
+    icon="pi pi-upload "
+    styleClass="text-color mx-3"
+  />
+  <p-button
+    label="Import"
+    [text]="true"
+    [raised]="true"
+    severity="secondary"
+    icon="pi pi-download"
+    styleClass="text-color"
+  />
+</div>
+<div class="flex align-items-center gap-3 mt-3 mb-4">
+  <i class="ph ph-clock-user" style="font-size: 24px"></i>
+  <div class="text-color font-bold">
+    <p>Afternoon Shift</p>
+    <p class="font-medium">12:00 PM - 08:00 PM</p>
+  </div>
+</div>
+<!-- Table -->
+<div class="card">
+  <!-- <div *ngIf="isLoading" class="card flex justify-content-center">
+    <p-progressSpinner ariaLabel="loading" styleClass="w-4rem h-4rem" />
+  </div> -->
+  <p-table
+    *ngIf="!isLoading"
+    [value]="shifts"
+    [tableStyle]="{ 'min-width': '60rem' }"
+  >
+    <ng-template pTemplate="header">
+      <tr>
+        <th style="width: 20%">Vehicle</th>
+        <th style="width: 20%">Plate Num.</th>
+        <th style="width: 20%">Odometer</th>
+        <th style="width: 20%">GPS</th>
+        <th style="width: 20%">Device</th>
+        <th style="width: 20%">SIM</th>
+        <th style="width: 20%">Fleet</th>
+        <th style="width: 20%">Status</th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-shift>
+      <tr>
+        <td>
+          <div class="flex align-items-center gap-3">
+            <div
+              class="text-color-secondary border-1 border-round w-max px-2 py-1"
+            >
+              SUV
+            </div>
+            <div class="underline">{{ shift.vehicleNo }}</div>
+          </div>
+        </td>
+        <td>{{ shift.plateNo }}</td>
+        <td>{{ shift.reading }} KM</td>
+        <td>{{ shift.time }}</td>
+        <td>
+          <div>
+            <div class="flex align-items-center">
+              <img src="/images/energy.svg" alt="i" />
+              {{ shift.device.name }}
+            </div>
+            <p style="letter-spacing: 4px">{{ shift.device.code }}</p>
+          </div>
+        </td>
+        <td>
+          <div>
+            <p>Allowance</p>
+            <p>1.5GB</p>
+          </div>
+        </td>
+        <td>Q22</td>
+        <td>
+          <div class="border-1 border-round w-max px-3 py-1">Active</div>
+        </td>
+      </tr>
+    </ng-template>
+  </p-table>
+
+  <p-table
+    *ngIf="isLoading"
+    [value]="skeletons"
+    [tableStyle]="{ 'min-width': '60rem' }"
+  >
+    <ng-template pTemplate="header">
+      <tr>
+        <th style="width: 20%">Vehicle</th>
+        <th style="width: 20%">Plate Num.</th>
+        <th style="width: 20%">Odometer</th>
+        <th style="width: 20%">GPS</th>
+        <th style="width: 20%">Device</th>
+        <th style="width: 20%">SIM</th>
+        <th style="width: 20%">Fleet</th>
+        <th style="width: 20%">Status</th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-skeleton>
+      <tr>
+        <td><p-skeleton /></td>
+        <td><p-skeleton /></td>
+        <td><p-skeleton /></td>
+        <td><p-skeleton /></td>
+        <td><p-skeleton /></td>
+        <td><p-skeleton /></td>
+        <td><p-skeleton /></td>
+        <td><p-skeleton /></td>
+      </tr>
+    </ng-template>
+  </p-table>
+</div>

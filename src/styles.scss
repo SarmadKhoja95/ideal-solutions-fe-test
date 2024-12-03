@@ -1,0 +1,125 @@
+/* You can add global styles to this file, and also import other style files */
+@import "primeflex/primeflex.css";
+@import "primeflex/themes/primeone-dark.css";
+@import "primeicons/primeicons.css";
+
+:root {
+  --red-900: #ff3f69;
+
+  --text-color: #cecbde;
+  --text-color-secondary: #9e9bad;
+  --border-radius: 15px;
+  --primary-color: #00c5d6;
+  --primary-color-text: #cecbde;
+  --surface-ground: #252836;
+  // --surface-section:#040d19;
+  --surface-card: #1f1d2b;
+  // --surface-overlay:#071426;
+  --surface-border: #464353;
+  // --surface-hover:rgba(255,255,255,.03);
+  --surface-0: #10141a;
+  --surface-50: #1f1d2b;
+  --surface-100: #464353;
+  --surface-200: #706d7e;
+  // --surface-300: #1f1d2b;
+  // --surface-400: #82868c;
+  // --surface-500: #9b9ea3;
+  // --surface-600: #b4b6ba;
+  // --surface-700: #cdcfd1;
+  // --surface-800: #e6e7e8;
+  --surface-900: #ffffff;
+
+  --p-button-gap: 12px !important;
+
+  // --p-datatable-border-color: red !important;
+  // --p-datatable-row-striped-background: red !important;
+  // --p-datatable-body-cell-selected-border-color: red !important;
+  // --p-datatable-header-background: red !important;
+  --p-datatable-border-color: var(--surface-border) !important;
+  --p-datatable-header-cell-background: var(--surface-50) !important;
+  --p-datatable-header-cell-color: var(--text-color-secondary) !important;
+  --p-datatable-row-background: transparent !important;
+
+  --p-button-primary-background: #60be7a !important;
+  --p-select-background: var(--surface-50) !important;
+
+  --p-progressspinner-color-1: var(--primary-color) !important;
+  --p-progressspinner-color-2: var(--primary-color) !important;
+  --p-progressspinner-color-3: var(--primary-color) !important;
+  --p-progressspinner-color-4: var(--primary-color) !important;
+}
+
+// background: var(--Colors-primary-soft, #252836); --
+// background: var(--Buttons-btn-prim-bkg, #252836) --
+// background: var(--Buttons-Nav-btn-nav-prim-bkg-click-focus, #00C5D6); --
+// background: var(--Buttons-Nav-btn-nav-prim-text, #706D7E); --
+
+// background: var(--Colors-primary-bg-deep, #10141A); --
+// background: var(--Colors-borders, #464353); --
+
+// background: var(--Text-text-prim, #CECBDE); --
+// background: var(--Text-text-sec, #9E9BAD); --
+
+// background: #60BE7A;
+
+// background: var(--Colors-primary-bg, #1F1D2B);
+// background: #1F1D2B59;
+
+html {
+  font-family: "Poppins", sans-serif;
+
+  /* Color Variables */
+  // --p-surface-0: red !important;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  font-weight: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: var(--surface-ground);
+  p {
+    margin: 0;
+  }
+}
+
+.sidebar {
+  width: 96px !important;
+  overflow: hidden;
+  background: var(--surface-0) !important;
+  border: none !important;
+  box-shadow: 16px 0px 30px 0px #00000033 !important;
+}
+.sidebar.collapsed {
+  width: 304px !important;
+}
+
+.p-drawer-mask {
+  width: auto !important;
+}
+
+.p-fileupload-choose-button {
+  background: var(--surface-50) !important;
+  border: none !important;
+  color: var(--text-color) !important;
+  height: 60px;
+  gap: 18px !important;
+  box-shadow: 0px 1px 1px 0px #02001799;
+  border-radius: 10px !important;
+}
+
+.p-select {
+  border: none !important;
+  width: 100%;
+}
+.p-select-list {
+  background: var(--surface-50) !important;
+}
+
+.p-knob svg {
+  outline: none !important;
+}

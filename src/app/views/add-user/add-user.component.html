@@ -1,0 +1,245 @@
+<form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+  <div
+    class="border-bottom-1 surface-border pt-3 pb-4 flex justify-content-between align-items-center"
+  >
+    <div class="flex align-items-center gap-6">
+      <i class="pi pi-arrow-left" style="font-size: 24px"></i>
+      <div class="flex flex-column gap-1 text-color">
+        <span class="font-bold">Add User</span>
+        <span class="font-medium">Organization</span>
+      </div>
+    </div>
+    <div>
+      <p-button
+        label="Cancel"
+        icon="pi pi-check"
+        [plain]="true"
+        [text]="true"
+        size="large"
+        styleClass="text-color mr-4"
+      />
+      <p-button
+        label="Save"
+        icon="pi pi-check"
+        size="large"
+        (click)="onSubmit()"
+        [loading]="isLoading"
+      />
+    </div>
+  </div>
+
+  <!-- Form -->
+  <div
+    class="flex flex-column align-items-center my-5 ml-auto mr-auto"
+    style="max-width: 853px"
+  >
+    <div class="h-12rem w-12rem overflow-hidden" style="border-radius: 16px">
+      <p-avatar
+        image="https://primefaces.org/cdn/primeng/images/demo/avatar/walter.jpg"
+        size="xlarge"
+        styleClass="h-full w-full"
+      />
+    </div>
+    <div class="mt-3 mb-5">
+      <p-fileUpload
+        mode="basic"
+        name="demo[]"
+        chooseIcon="ph ph-camera"
+        url="https://www.primefaces.org/cdn/api/upload.php"
+        accept="image/*"
+        maxFileSize="1000000"
+        (onUpload)="onBasicUploadAuto($event)"
+        [auto]="true"
+        chooseLabel="Upload Image"
+      />
+    </div>
+
+    <div class="flex align-items-start gap-2 mb-3 w-full">
+      <div class="flex-1">
+        <p class="text-color-secondary text-xs pb-2">
+          First Name <span class="text-red-900">*</span>
+        </p>
+        <input
+          type="text"
+          class="input-field"
+          placeholder="Enter first name"
+          formControlName="firstName"
+        />
+        <div
+          *ngIf="
+            userForm.get('firstName')?.invalid &&
+            (userForm.get('firstName')?.dirty ||
+              userForm.get('firstName')?.touched)
+          "
+          class="error"
+        >
+          <div *ngIf="userForm.get('firstName')?.hasError('required')">
+            First name is required.
+          </div>
+        </div>
+      </div>
+      <div class="flex-1">
+        <p class="text-color-secondary text-xs pb-2">Middle Name</p>
+        <input
+          type="text"
+          class="input-field"
+          placeholder="Enter middle name"
+        />
+      </div>
+      <div class="flex-1">
+        <p class="text-color-secondary text-xs pb-2">
+          Last Name <span class="text-red-900">*</span>
+        </p>
+        <input
+          type="text"
+          class="input-field"
+          placeholder="Enter last name"
+          formControlName="lastName"
+        />
+        <div
+          *ngIf="
+            userForm.get('lastName')?.invalid &&
+            (userForm.get('lastName')?.dirty ||
+              userForm.get('lastName')?.touched)
+          "
+          class="error"
+        >
+          <div *ngIf="userForm.get('lastName')?.hasError('required')">
+            Last name is required.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="w-full mb-3">
+      <p class="text-color-secondary text-xs pb-2">
+        Email <span class="text-red-900">*</span>
+      </p>
+      <p-iconField iconPosition="left" styleClass="flex-1">
+        <p-inputIcon
+          styleClass="pi pi-envelope text-color ml-1"
+          style="font-size: 18px"
+        />
+        <input
+          type="text"
+          pInputText
+          placeholder="Enter email"
+          class="input-field pl-7"
+          formControlName="email"
+        />
+      </p-iconField>
+      <div
+        *ngIf="
+          userForm.get('email')?.invalid &&
+          (userForm.get('email')?.dirty || userForm.get('email')?.touched)
+        "
+        class="error"
+      >
+        <div *ngIf="userForm.get('email')?.hasError('required')">
+          Email is required.
+        </div>
+        <div *ngIf="userForm.get('email')?.hasError('email')">
+          Invalid Email..
+        </div>
+      </div>
+    </div>
+
+    <div class="w-full mb-3">
+      <p class="text-color-secondary text-xs pb-2">Phone</p>
+      <p-iconField iconPosition="left" styleClass="flex-1">
+        <p-inputIcon
+          styleClass="ph ph-phone-call text-color ml-1"
+          style="font-size: 20px"
+        />
+        <input
+          type="number"
+          pInputText
+          placeholder="Enter phone number"
+          class="input-field pl-7"
+          formControlName="phone"
+        />
+      </p-iconField>
+      <div
+        *ngIf="
+          userForm.get('phone')?.invalid &&
+          (userForm.get('phone')?.dirty || userForm.get('phone')?.touched)
+        "
+        class="error"
+      >
+        <div *ngIf="userForm.get('phone')?.hasError('pattern')">
+          Invalid phone number format.
+        </div>
+      </div>
+    </div>
+
+    <div class="w-full mb-3">
+      <p class="text-color-secondary text-xs pb-2">
+        Role <span class="text-red-900">*</span>
+      </p>
+      <p-dropdown
+        [options]="roles"
+        formControlName="role"
+        optionLabel="name"
+        placeholder="Select a role"
+      />
+      <div
+        *ngIf="
+          userForm.get('role')?.invalid &&
+          (userForm.get('role')?.dirty || userForm.get('role')?.touched)
+        "
+        class="error"
+      >
+        <div *ngIf="userForm.get('role')?.hasError('required')">
+          Role is required.
+        </div>
+      </div>
+    </div>
+
+    <div class="w-full mb-3">
+      <p class="text-color-secondary text-xs pb-2">
+        Department <span class="text-red-900">*</span>
+      </p>
+      <p-dropdown
+        [options]="departments"
+        formControlName="department"
+        optionLabel="name"
+        placeholder="Select a department"
+      />
+      <div
+        *ngIf="
+          userForm.get('department')?.invalid &&
+          (userForm.get('department')?.dirty ||
+            userForm.get('department')?.touched)
+        "
+        class="error"
+      >
+        <div *ngIf="userForm.get('department')?.hasError('required')">
+          Department is required.
+        </div>
+      </div>
+    </div>
+
+    <div class="w-full mb-3">
+      <p class="text-color-secondary text-xs pb-2">
+        Fleet <span class="text-red-900">*</span>
+      </p>
+      <p-dropdown
+        [options]="fleets"
+        formControlName="fleet"
+        optionLabel="name"
+        placeholder="Select a fleet"
+      />
+      <div
+        *ngIf="
+          userForm.get('fleet')?.invalid &&
+          (userForm.get('fleet')?.dirty || userForm.get('fleet')?.touched)
+        "
+        class="error"
+      >
+        <div *ngIf="userForm.get('fleet')?.hasError('required')">
+          Fleet is required.
+        </div>
+      </div>
+    </div>
+  </div>
+</form>
