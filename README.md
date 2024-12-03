@@ -10,6 +10,9 @@ This is a simple Angular application built with **PrimeNG** for UI components. T
 - **JSON Server** as a lightweight REST API for mock data.
 - Example integration with Angular's **HTTP Client** to fetch and display data.
 
+## Demo video
+https://github.com/user-attachments/assets/73b7dbe2-2b88-4faa-af07-b0b13c116e2e
+
 ---
 
 ## Prerequisites
